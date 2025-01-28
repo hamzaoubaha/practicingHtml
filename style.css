@@ -96,8 +96,28 @@ h5 input.name-b{
     background: rgb(255, 255, 255, 0.1);
     outline: none;
 }
-h5 input.number{
+/* input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+} */
+input[type="number"] {
+    -webkit-appearance: none; /* إخفاء الأسهم في المتصفحات المستندة إلى WebKit */
+    -moz-appearance: textfield; /* إخفاء الأسهم في Firefox */
+    appearance: none; /* لدعم المتصفحات الحديثة */
+}
 
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button 
+{
+    display: none; /* إخفاء الأسهم تمامًا */
+}
+
+h5 input.number{
     color: aliceblue;
     background: rgb(255, 255, 255, 0.1);
     outline: none;
@@ -111,6 +131,6 @@ h5.val input{
 form input.btn{
     margin-top: 40px;
     margin-left: 40px;
-    width: 100px;
+    width: 120px;
 
 }
